@@ -1,0 +1,150 @@
+
+*{
+  margin: 0; padding: 0;
+  box-sizing: border-box;
+  text-transform: uppercase;
+  font-family: Arial, Helvetica, sans-serif;
+  text-decoration: none;
+  transition: .2s linear;
+}
+
+body{
+  overflow: hidden;
+}
+
+header{
+  display: flex;
+  position: fixed;
+  top:0; left: 0;
+  padding: 10px 20px;
+  margin:10px 40px;
+  background-color: rgba(255,255,255,.1);
+  z-index: 100;
+  border-radius: 5px;
+}
+
+header .fa-bars{
+  font-size: 30px;
+  color:#FFC700;
+}
+
+header ul{
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  list-style-type: none;
+}
+
+header ul li{
+  margin:0 20px;
+}
+
+
+header ul li a{
+  font-size: 16px;
+  color:#f0f0f0;
+}
+
+header ul li a:hover{
+  color:#FFC700;
+}
+
+.container{
+  display: flex;
+}
+
+.content{
+  min-height: 93vh;
+  width: 40vw;
+  background-color: #222;
+  position: relative;
+  z-index: 0;
+  overflow: hidden;
+  padding: 40px;
+}
+
+.content::before{
+  content: '';
+  position: absolute;
+  bottom: -90px; left: -30px;
+  height:200px;
+  width:200px;
+  border-radius: 50%;
+  background:rgba(255,255,255,.1);
+  z-index: -1;
+}
+
+.content h1{
+  color:#f0f0f0;
+  font-size: 72px;
+  padding-top: 40px;
+  text-shadow: 0 3px 5px #000;
+}
+
+.content h1 .span1{
+  font-size: 120px;
+}
+
+.content h1 .span2{
+  font-size: 150px;
+  color:#FFC700;
+}
+
+.content .btn{
+  position: absolute;
+  bottom: 40px;
+  left: 20px;
+  display: block;
+  font-weight: bold;
+  color:#FFC700;
+  text-shadow: 0 3px 5px #000;
+}
+
+.content .btn:hover{
+  color: #f0f0f0;
+}
+
+.content .icons{
+  display: flex;
+  flex-flow: column;
+  position: absolute;
+  bottom:20px; right:20px;
+}
+
+.content .icons a{
+  font-size: 25px;
+  margin:13px 0;
+  color:#f0f0f0;
+  text-shadow: 0 3px 5px #000;
+}
+
+.content .icons a:hover{
+  color:#FFC700;
+}
+
+.image{
+  min-height: 93vh;
+  width:60vw;
+  background:url('thieb.jpg') no-repeat;
+  background-size: cover !important;
+  background-position: center !important;
+}
+
+.cursor{
+  height:50px;
+  width:50px;
+  border-radius: 50%;
+  background-color: rgba(255,255,255,.3);
+  transform:translate(-50%, -50%);
+  transition: transform .2s;
+  pointer-events: none;
+  position: absolute;
+  z-index: 10;
+}
+
+.image:hover ~ .cursor{
+  background:none;
+  transform: scale(6);
+  border: 1px solid #ffffff;
+  backdrop-filter: grayscale();
+}
